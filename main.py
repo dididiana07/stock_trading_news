@@ -66,7 +66,7 @@ for article in latest_articles[:2]:
     url = article["url"]
     message = client.messages.create(to="",
                                      from_=PHONE_NUMBER,
-                                     body=f"{positive_number(total_difference)} {total_difference}%\n"
+                                     body=f"{GOOGLE_SYMBOL}: {positive_number(total_difference)}{total_difference}%\n"
                                           f"{title}\n"
                                           f"{description}\n"
                                           f"{url}")
