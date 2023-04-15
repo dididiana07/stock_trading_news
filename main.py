@@ -4,6 +4,7 @@ from twilio.rest import Client
 
 # Variables // Constants
 GOOGLE_SYMBOL = "GOOG"
+COMPANY_NAME = "Google"
 API_KEY_ALPHA_VANTAGE = os.environ["ALPHA_VANTAGE_API_KEY"]
 FUNCTION = "TIME_SERIES_DAILY_ADJUSTED"
 NEWS_API_KEY = os.environ["NEWS_API_KEY"]
@@ -66,7 +67,7 @@ for article in latest_articles[:2]:
     url = article["url"]
     message = client.messages.create(to="",
                                      from_=PHONE_NUMBER,
-                                     body=f"{GOOGLE_SYMBOL}: {positive_number(total_difference)}{total_difference}%\n"
+                                     body=f"{COMPANY_NAME}: {positive_number(total_difference)}{total_difference}%\n"
                                           f"Tile: {title}\n"
                                           f"Brief: {description}\n"
                                           f"{url}")
