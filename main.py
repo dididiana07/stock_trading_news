@@ -56,7 +56,7 @@ days = list(stock_prices)
 
 yesterday_close_price = float(stock_prices[days[0]]['4. close'])
 day_before_yesterday_close_price = float(stock_prices[days[1]]['4. close'])
-total_difference = round(((yesterday_close_price - day_before_yesterday_close_price) / 100) * 100, 2)
+total_difference = round(((yesterday_close_price - day_before_yesterday_close_price) / yesterday_close_price) * 100, 2)
 
 latest_articles = news_api_articles(query=GOOGLE_SYMBOL, apikey=NEWS_API_KEY)[::-1]
 sign = positive_number(total_difference)
